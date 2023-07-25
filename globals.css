@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@media (max-width: 1250px) {
+    .Products {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .Navbar-ul {
+        width: 80%;
+    }
+
+    .Footer-ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+        font-size: small;
+    }
+
+    .Ender {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
