@@ -7,10 +7,10 @@ interface MyComponentProps {
 const AvoDetails: React.FC<MyComponentProps> = ({product}) => {
 
     const context = React.useContext(AppContext)
-    const { cart, addToCart } = context
+    const { addToCart } = context
 
     const handleAddToCart = (product: TProduct) => {
-        addToCart(product)    
+        addToCart(product) 
     }
 
     return (

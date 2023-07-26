@@ -4,7 +4,7 @@ const useInitialState = () => {
 
     const API: string = "/api/avo"
     const [cart, setCart] = React.useState<TProduct[]>([])
-    const [avocados, setAvocados] = React.useState<TProduct[]>([]);
+    const [avocados, setAvocados] = React.useState<TProduct[]>([])
 
     const fetchData = (url: string) => {
         window.fetch(url)
@@ -20,10 +20,16 @@ const useInitialState = () => {
         setCart([...cart, payload])
     }
 
+    const removeFromCart = (payload: TProduct) => {
+        const updateCart = cart.filter((avo: TProduct) => avo.id !== payload.id)
+        setCart(updateCart)
+    }
+
     return {
         cart,
         avocados,
-        addToCart
+        addToCart,
+        removeFromCart,
     }
 }
 

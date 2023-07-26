@@ -4,6 +4,7 @@ interface AppContextType {
     avocados: TProduct[]
     cart: TProduct[]
     addToCart: (payload: TProduct) => void
+    removeFromCart: (payload: TProduct) => void
 }
 
 const AppContext = React.createContext<AppContextType>({} as AppContextType)
