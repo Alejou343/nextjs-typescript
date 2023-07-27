@@ -7,11 +7,16 @@ interface MyComponentProps {
 const AvoDetails: React.FC<MyComponentProps> = ({product}) => {
 
     const context = React.useContext(AppContext)
-    const [number, setNumber] = React.useState(1)
+    const [number, setNumber] = React.useState<number>(1)
+    const [charge, setCharge] = React.useState<boolean>(false)
     const { addToCart } = context
 
     const handleAddToCart = (product: TProduct, number: number) => {
+        setCharge(true)
         addToCart(product, number) 
+        setTimeout(() => {
+            setCharge(false)
+        }, 1500);
     }
 
     return (
@@ -26,9 +31,11 @@ const AvoDetails: React.FC<MyComponentProps> = ({product}) => {
                         <input type="number" className="border px-2 border-gray-300 rounded-l-md h-10" min="1"
                         onChange= {(e) => setNumber(Number(e.target.value))}
                         />
-                        <button className="bg-green-400 w-32 font-bold rounded-r-md text-white"
-                        onClick = {() => handleAddToCart(product, number)}
-                        >Add to Cart</button>
+                        <button 
+                        className="bg-green-400 w-32 font-bold rounded-r-md text-white flex justify-center items-center"
+                        onClick = {() => handleAddToCart(product, number)}>
+                            {charge ? <div className="loading-spinner border-4 border-green-300" /> : 'Add to Cart'} 
+                        </button>
                     </div>
                 </div>
             </div>

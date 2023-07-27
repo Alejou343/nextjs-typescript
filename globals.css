@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+.loading-spinner {
+    border-top: 4px solid white;
+    border-radius: 50%; 
+    width: 20px; 
+    height: 20px; 
+    animation: spin 1s linear infinite; 
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 @media (max-width: 1250px) {
     .Products {
         grid-template-columns: repeat(1, minmax(0, 1fr));
