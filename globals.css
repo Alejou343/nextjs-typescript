@@ -41,4 +41,20 @@
         left: 50%;
         transform: translate(-50%, -50%);
     }
+
+    .Avo-info {
+        width: auto;
+    }
+}
+
+@media (max-width: 700px) {
+    .Avo-header {
+        flex-direction: column;
+    }
+
+    .Avo-product, .Cart-resume, .Cart-separator, .Cart-info {
+        width: auto;
+    }
+
+
 }

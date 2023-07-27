@@ -9,25 +9,31 @@ const AvoDetails: React.FC<MyComponentProps> = ({product}) => {
     const context = React.useContext(AppContext)
     const [number, setNumber] = React.useState<number>(1)
     const [charge, setCharge] = React.useState<boolean>(false)
+    const [alert, setAlert] = React.useState<boolean>(false)
     const { addToCart } = context
 
     const handleAddToCart = (product: TProduct, number: number) => {
         setCharge(true)
-        addToCart(product, number) 
+        
         setTimeout(() => {
+            addToCart(product, number) 
             setCharge(false)
+            setAlert(true)
+            setTimeout(() => {
+                setAlert(false)
+            }, 700);
         }, 1500);
     }
 
     return (
-        <div className="Avo-info mt-12 mx-auto w-2/4">
+        <div className="Avo-info mt-12 mx-auto w-2/4 px-4">
             <div className="Avo-header flex items-center">
                 <img src={product.image} alt={product.name} className='w-80 h-80'/>
                 <div className="Avo-shopping p-4">
                     <h1 className="font-bold text-xl mb-4">{product.name}</h1>
-                    <h3>{product.price}</h3>
+                    <h3 className="text-gray-400"> <b>$</b> {1000 * product.price} COP </h3>
                     <h4 className="bg-gray-300 rounded-md w-5/12 text-center my-2 p-2 text-xs">SKU: {product.sku}</h4>
-                    <div className="input flex">
+                    <div className="Avo-form input flex">
                         <input type="number" className="border px-2 border-gray-300 rounded-l-md h-10" min="1"
                         onChange= {(e) => setNumber(Number(e.target.value))}
                         />
@@ -37,6 +43,7 @@ const AvoDetails: React.FC<MyComponentProps> = ({product}) => {
                             {charge ? <div className="loading-spinner border-4 border-green-300" /> : 'Add to Cart'} 
                         </button>
                     </div>
+                        {alert ? <h1 className="text-sm text-green-500 font-semibold mt-2">Product added</h1>: null}
                 </div>
             </div>
             <div className="about-avo">

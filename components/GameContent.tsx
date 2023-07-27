@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const GameContent = () => {
 
-    const [ answer, setAnswer ] = React.useState<string>('')
+    const [ answer, setAnswer ] = React.useState<string>('YES')
     const [ charge, setCharge ] = React.useState<boolean>(false)
 
     const randomAnswer = () => {

@@ -9,7 +9,7 @@ const Header = () => {
                 <img src="https://img.icons8.com/?size=1x&id=LsjNaFVtOmOu&format=png" alt="Avo" />
                 &nbsp; <p className="text-yellow-800">Store</p>
             </h1>
-            <Link href="/yes-or-no" className="text-yellow-300 font-semibold mb-8"> Debería comer un aguacate hoy? </Link>
+            <Link href="/yes-or-no" className="text-yellow-300 font-semibold mb-8"> Should I eat an avocado today?</Link>
         </div>
     )
 }

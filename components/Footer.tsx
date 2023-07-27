@@ -6,19 +6,19 @@ const Footer = () => {
         <div className="Footer relative border-t mt-7 h-80">
             <ul className="Footer-ul flex justify-between w-2/4 mx-auto my-5 h-20 items-center">
                 <li className="w-50">
-                    <p className="font-bold">Nosotros</p>
-                    <Link href="/about" className="text-blue-400">Conoce más</Link>
+                    <p className="font-bold">About us</p>
+                    <Link href="/about" className="text-blue-400">Know more</Link>
                 </li>
                 <li className="w-50">
                     <p className="font-bold">Servicios</p>
-                    <Link href="/" className="text-blue-400">Todos los productos</Link>
+                    <Link href="/" className="text-blue-400">All Products</Link>
                 </li>
                 <li className="w-50">
-                    <p className="font-bold">Hecho para</p>
-                    <span>Desarrollar mi &nbsp;
-                        <Link href="/" className="text-blue-400">portafolio, &nbsp;</Link> 
-                            creado por
-                        <Link href="/" className="text-blue-400">@Alejou343</Link>
+                    <p className="font-bold">Made by</p>
+                    <span>Develop my &nbsp;
+                        <a href="http://alejou343.github.io/bootstrap/" className="text-blue-400" target='blank'>portfolio, <br/> </a> 
+                            created by &nbsp;
+                        <a href="http://www.instagram.com/alejou343/" className="text-blue-400" target='blank'>@Alejou343</a>
                     </span>
                 </li>
             </ul>

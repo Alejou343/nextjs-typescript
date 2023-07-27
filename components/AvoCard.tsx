@@ -17,7 +17,7 @@ const AvoCard: React.FC<DataFromAPI> = ({name, image, price, id}) => {
                 </div>
                 <div className="avo-info border-t-8 border-green-200 bg-green-50">
                     <h2 className="font-bold px-4 py-2">{name}</h2>
-                    <h4 className="pb-2 px-4 text-gray-400">{price}</h4>
+                    <h4 className="pb-2 px-4 text-gray-400"> <b>$</b> {1000 * price} COP</h4>
                 </div>
             </section>
         </Link>

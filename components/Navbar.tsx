@@ -21,7 +21,7 @@ const Navbar = () => {
                 <Link href="/cart">
                     <li className={`px-6 h-16 flex items-center ${route.pathname == '/cart' ? 'bg-gray-200 border-green-400 border-b' : null}`}>
                         <img src="https://img.icons8.com/?size=1x&id=13014&format=png" alt="cart" className="w-8 h-8"/>
-                        <p className="font-bold text-green-500">Canasta ({cart.length})</p> 
+                        <p className="font-bold text-green-500">Avo Cart ({cart.length})</p> 
                     </li>
                 </Link>
             </ul>
