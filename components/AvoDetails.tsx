@@ -1,5 +1,5 @@
-import AppContext from '@/context/AppContext'
 import React from 'react'
+import AppContext from '@/context/AppContext'
 
 interface MyComponentProps {
     product: TProduct
@@ -7,10 +7,11 @@ interface MyComponentProps {
 const AvoDetails: React.FC<MyComponentProps> = ({product}) => {
 
     const context = React.useContext(AppContext)
+    const [number, setNumber] = React.useState(1)
     const { addToCart } = context
 
-    const handleAddToCart = (product: TProduct) => {
-        addToCart(product) 
+    const handleAddToCart = (product: TProduct, number: number) => {
+        addToCart(product, number) 
     }
 
     return (
@@ -22,9 +23,11 @@ const AvoDetails: React.FC<MyComponentProps> = ({product}) => {
                     <h3>{product.price}</h3>
                     <h4 className="bg-gray-300 rounded-md w-5/12 text-center my-2 p-2 text-xs">SKU: {product.sku}</h4>
                     <div className="input flex">
-                        <input type="number" className="border px-2 border-gray-300 rounded-l-md h-10"/>
+                        <input type="number" className="border px-2 border-gray-300 rounded-l-md h-10" min="1"
+                        onChange= {(e) => setNumber(Number(e.target.value))}
+                        />
                         <button className="bg-green-400 w-32 font-bold rounded-r-md text-white"
-                        onClick = {() => handleAddToCart(product)}
+                        onClick = {() => handleAddToCart(product, number)}
                         >Add to Cart</button>
                     </div>
                 </div>

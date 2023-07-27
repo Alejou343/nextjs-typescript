@@ -16,8 +16,13 @@ const useInitialState = () => {
         fetchData(API)
     }, [])
 
-    const addToCart = (payload: TProduct) => {
-        setCart([...cart, payload])
+    const addToCart = (payload: TProduct, number: number) => {
+        if (cart.some(x => x === payload)) {
+            payload.cantidad += number 
+        } else {
+            payload.cantidad += number - 1
+            setCart([...cart, payload])
+        }
     }
 
     const removeFromCart = (payload: TProduct) => {

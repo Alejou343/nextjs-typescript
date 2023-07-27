@@ -22,6 +22,7 @@ type TProduct = {
   sku: string
   price: number
   image: Url
+  cantidad: number
   attributes: TProductAttributes
 }
 

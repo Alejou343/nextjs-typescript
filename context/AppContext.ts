@@ -3,7 +3,7 @@ import React from 'react';
 interface AppContextType {
     avocados: TProduct[]
     cart: TProduct[]
-    addToCart: (payload: TProduct) => void
+    addToCart: (payload: TProduct, number: number) => void
     removeFromCart: (payload: TProduct) => void
 }
 
