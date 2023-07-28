@@ -14,7 +14,7 @@ const AvocadoInfo = () => {
     return (
         <>
         <Head>
-            <title>{filteredAvo[0].name}</title>
+            <title>{filteredAvo[0]?.name}</title>
         </Head>
         { !!filteredAvo[0] ? <AvoDetails product = {filteredAvo[0]} /> 
             : <div className="text-center text-red-500 my-6">Producto no encontrado</div>
