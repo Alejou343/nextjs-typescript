@@ -1,9 +1,15 @@
 import React from 'react'
 import GameContent from '@/components/GameContent'
+import Head from 'next/head'
 
 const YesOrNo = () => {
     return (
-        <GameContent />
+        <>
+            <Head>
+                <title>Game</title>
+            </Head>
+            <GameContent />
+        </>
     )
 }
 

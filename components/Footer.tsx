@@ -16,9 +16,9 @@ const Footer = () => {
                 <li className="w-50">
                     <p className="font-bold">Made by</p>
                     <span>Develop my &nbsp;
-                        <a href="http://alejou343.github.io/bootstrap/" className="text-blue-400" target='blank'>portfolio, <br/> </a> 
+                        <Link href="http://alejou343.github.io/bootstrap/" className="text-blue-400" target='blank'>portfolio, <br/> </Link> 
                             created by &nbsp;
-                        <a href="http://www.instagram.com/alejou343/" className="text-blue-400" target='blank'>@Alejou343</a>
+                        <Link href="http://www.instagram.com/alejou343/" className="text-blue-400" target='blank'>@Alejou343</Link>
                     </span>
                 </li>
             </ul>

@@ -1,5 +1,5 @@
-import AppContext from '@/context/AppContext'
 import React from 'react'
+import AppContext from '@/context/AppContext'
 
 interface TypeProps {
     product: TProduct

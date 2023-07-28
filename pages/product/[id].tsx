@@ -2,6 +2,7 @@ import React from 'react'
 import { useRouter } from 'next/router'
 import AvoDetails from '@/components/AvoDetails'
 import AppContext from '@/context/AppContext'
+import Head from 'next/head'
 
 
 const AvocadoInfo = () => {
@@ -12,6 +13,9 @@ const AvocadoInfo = () => {
 
     return (
         <>
+        <Head>
+            <title>{filteredAvo[0].name}</title>
+        </Head>
         { !!filteredAvo[0] ? <AvoDetails product = {filteredAvo[0]} /> 
             : <div className="text-center text-red-500 my-6">Producto no encontrado</div>
         }

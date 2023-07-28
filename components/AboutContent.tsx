@@ -1,6 +1,7 @@
 import React from 'react'
 import facts from '@/database/facts'
 import FactCard from '@/components/FactCard'
+import Image from 'next/image'
 
 const AboutContent = () => {
   return (
