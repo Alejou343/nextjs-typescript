@@ -1,5 +1,6 @@
 import React from 'react'
 import AppContext from '@/context/AppContext'
+import Image from 'next/image'
 
 interface MyComponentProps {
     product: TProduct
@@ -28,7 +29,7 @@ const AvoDetails: React.FC<MyComponentProps> = ({product}) => {
     return (
         <div className="Avo-info mt-12 mx-auto w-2/4 px-4">
             <div className="Avo-header flex items-center">
-                <img src={product.image} alt={product.name} className='w-80 h-80'/>
+                <Image src={product.image} alt={product.name} className='w-80 h-80' width={320} height={320} />
                 <div className="Avo-shopping p-4">
                     <h1 className="font-bold text-xl mb-4">{product.name}</h1>
                     <h3 className="text-gray-400"> <b>$</b> {1000 * product.price} COP </h3>

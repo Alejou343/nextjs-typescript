@@ -1,14 +1,36 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 import AvoDetails from '@/components/AvoDetails'
-import AppContext from '@/context/AppContext'
+import { GetStaticProps } from 'next'
 import Head from 'next/head'
 
+export const getStaticPaths = async () => {
 
-const AvocadoInfo = () => {
+    const response = await fetch('https://avo-store-cpezbw4hb-alejou343.vercel.app/api/avo')
+    const { data: allAvos }: TAPIAvoResponse = await response.json()
+    const paths = allAvos.map(avo => ({params: {id: avo.id}}))
+
+    return {
+        paths: paths,
+        fallback: false
+    }
+}
+
+export const getStaticProps: GetStaticProps = async() => {
+    const response = await fetch('https://avo-store-cpezbw4hb-alejou343.vercel.app/api/avo')
+    const { data: avocados }: {data: TProduct} = await response.json()
+
+    return {
+        props: {
+            avocados
+        }
+    }
+}
+
+const AvocadoInfo = ({avocados}: {avocados: TProduct[]}) => {
 
     const route = useRouter()
-    const { avocados } = React.useContext(AppContext)
+    // const { avocados } = React.useContext(AppContext)
     const filteredAvo: TProduct[] = avocados.filter(avo => avo.id === route.query.id)
 
     return (

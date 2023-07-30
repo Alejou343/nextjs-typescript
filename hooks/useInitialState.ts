@@ -7,7 +7,7 @@ const useInitialState = () => {
     const [avocados, setAvocados] = React.useState<TProduct[]>([])
 
     const fetchData = (url: string) => {
-        window.fetch(url)
+        fetch(url)
         .then(response => response.json())
         .then(data => setAvocados(data.data))
     } 

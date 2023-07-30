@@ -14,7 +14,7 @@ const AvoCard: React.FC<DataFromAPI> = ({name, image, price, id}) => {
         <Link href={`/product/${id}`}>
             <section className="card border-green-200 border w-80 h-auto rounded-md cursor-pointer">
                 <div className="avo-image">
-                    <img src={image} alt={name} className="rounded-md"/>
+                    <Image src={image} alt={name} width={318} height={318} />
                 </div>
                 <div className="avo-info border-t-8 border-green-200 bg-green-50">
                     <h2 className="font-bold px-4 py-2">{name}</h2>
